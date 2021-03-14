@@ -43,3 +43,10 @@ $inputField.on('keypress', function (e) {
         $inputField.val('');
     }
 })
+
+
+/* 
+To Do
+- find another image that has images for all these cities. 
+- Add a drop down that user can pick states from and modify the api call to include states
+*/
