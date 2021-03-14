@@ -25,11 +25,12 @@ function getWeatherData() {
 }
 
 function render(weatherData) {
-    $displayCard.css('display', 'flex');
+    // $displayCard.css('display', 'flex');
     $city.text('Weather For: ' + weatherData.name);
     $temp.text('Temperature: ' + weatherData.main.temp);
     $feelsLike.text('Feels Like: ' + weatherData.main.feels_like);
     $weather.text('Weather: ' + weatherData.weather[0].main);
+    changeBodyImage(weatherData.weather[0].main)
 }
 
 function handleWeather(e) {
@@ -42,16 +43,19 @@ function handleWeather(e) {
 function changeBodyImage(weather) {
     switch (weather) {
         case 'Cloudy':
-            $display.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+            $displayBody.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+            break;
+        case 'Clouds':
+            $displayBody.css('backgroundImage', 'url(\'https://www.farmersalmanac.com/wp-content/uploads/2020/11/Clouds-Predict-Local-Weather-i861387936-1184x630.jpg\')')          
             break;
         case 'Clear':
-            $display.css('backgroundImage', 'https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/69598481_2406628619413408_320526545942740992_o.jpg?_nc_cat=102&ccb=1-3&_nc_sid=973b4a&_nc_ohc=SVL9vR0TBCkAX-gAZK_&_nc_ht=scontent-sjc3-1.xx&oh=d466272d42be2569c28d8532504c8e25&oe=6072B9FD')          
+            $displayBody.css('backgroundImage', 'url(\'https://www.goodfreephotos.com/albums/united-states/wisconsin/southern-wisconsin/souther-wisconsin-pond-on-a-clear-day.jpg\')')          
             break;
         case 'Cloudy':
-            $display.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+            $displayBody.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
             break;
         case 'Cloudy':
-            $display.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+            $displayBody.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
             break;
     
         default:
