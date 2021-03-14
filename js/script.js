@@ -9,7 +9,7 @@ $displayCard = $('.displayCard');
 let userInput;
 
 //images 
-let sunny = ''
+let sunny = '';
 
 function getWeatherData() {
     $.ajax({
