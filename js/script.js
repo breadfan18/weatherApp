@@ -3,8 +3,11 @@ $temp = $('#temp');
 $feelsLike = $('#feelsLike');
 $weather = $('#weather');
 $inputField = $('#input');
-$submit = $('#submitBtn');
+$submit = $('.waves-effect');
 let userInput;
+
+//images 
+let sunny = ''
 
 function getWeatherData() {
     $.ajax({
@@ -24,7 +27,6 @@ function render(weatherData) {
     $temp.text('Temperature: ' + weatherData.main.temp);
     $feelsLike.text('Feels Like: ' + weatherData.main.feels_like);
     $weather.text('Weather: ' + weatherData.weather[0].main);
-    // $img.src(movieData.Poster);
 }
 
 function handleWeather(e) {

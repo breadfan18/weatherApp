@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,23 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intro to AJAX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 
 <body>
+    <div id="hurricaneSpace">Thundersnow possible with record-challenging winter storm this weekend in Rockies. Get the forecast.</div>
     <header>
+        <img id="headerIcon" src="https://i.imgur.com/3UUUb4h.png" alt="sunIcon">
         <h1>AJAX Weather Lab</h1>
+        <form class="headerInput">
+            <input id="input" type="text" placeholder="Enter city..">
+            <button class="waves-effect waves-light btn">Get Weather</button>
+        </form>
+        
     </header>
     <main>
         <p id="city"></p>
         <p id="temp"></p>
         <p id="feelsLike"></p>
         <p id="weather"></p>
-        <form>
-            <input id="input" type="text" placeholder="Enter city..">
-            <button id="submitBtn">Get Weather</button>
-        </form>
+        
+        <div id="bodyContainer">
+
+        </div>
     </main>
 </body>
 

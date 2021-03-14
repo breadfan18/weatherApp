@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Noto Sans', sans-serif;
+    /* max-width: 800px; */
+}
+
+#hurricaneSpace{
+    height: 25px;
+    background-color: rgb(201, 15, 201);
+    color: white;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 5pxpx 0;
+}
+
+#headerIcon {
+    height: 100px;
+}
+
+.headerInput {
+    margin-left: auto;
+    padding: 40px; 
+
+}
+
+#input {
+    color: white;
+    font-size: 20px;
+}
+
+.waves-effect {
+    background-color: rgb(221, 211, 211);
+    color: black;
+}
