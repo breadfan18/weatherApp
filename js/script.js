@@ -13,7 +13,7 @@ let sunny = '';
 
 function getWeatherData() {
     $.ajax({
-        url: `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=8e0c596f2a6fd2d958d7bb12765da115`
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=8e0c596f2a6fd2d958d7bb12765da115&units=imperial`
     }).then(
         (data) => {
             render(data);
@@ -25,11 +25,11 @@ function getWeatherData() {
 }
 
 function render(weatherData) {
-    // $displayCard.css('display', 'flex');
-    $city.text('Weather For: ' + weatherData.name);
-    $temp.text('Temperature: ' + weatherData.main.temp);
+    $temp.text(`${Math.floor(weatherData.main.temp)}°F`);
+    $city.text(weatherData.name);
     $feelsLike.text('Feels Like: ' + weatherData.main.feels_like);
     $weather.text('Weather: ' + weatherData.weather[0].main);
+    $displayCard.addClass('cardSwipeIn');
     changeBodyImage(weatherData.weather[0].main)
 }
 
@@ -43,7 +43,7 @@ function handleWeather(e) {
 function changeBodyImage(weather) {
     switch (weather) {
         case 'Cloudy':
-            $displayBody.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+            $displayBody.css('backgroundImage', 'url(\'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg\')')          
             break;
         case 'Clouds':
             $displayBody.css('backgroundImage', 'url(\'https://www.farmersalmanac.com/wp-content/uploads/2020/11/Clouds-Predict-Local-Weather-i861387936-1184x630.jpg\')')          
@@ -51,11 +51,11 @@ function changeBodyImage(weather) {
         case 'Clear':
             $displayBody.css('backgroundImage', 'url(\'https://www.goodfreephotos.com/albums/united-states/wisconsin/southern-wisconsin/souther-wisconsin-pond-on-a-clear-day.jpg\')')          
             break;
-        case 'Cloudy':
-            $displayBody.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+        case 'Mist':
+            $displayBody.css('backgroundImage', 'url(\'https://media.arubanetworks.com/blogs/GettyImages-1164051562-1024x683.jpg\')')          
             break;
         case 'Cloudy':
-            $displayBody.css('backgroundImage', 'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg')          
+            $displayBody.css('backgroundImage', 'url(\'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg\')')          
             break;
     
         default:
