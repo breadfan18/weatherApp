@@ -1186,4 +1186,24 @@ To Do
 - Add a drop down that user can pick states from and modify the api call to include states
 */
 
-console.log(stateCityList["New York"]);
+let allStates = Object.keys(stateCityList);
+allStates.forEach(element => {
+    let $newStateRow = $(`
+        <option value="${element}">${element}</option>
+    `)
+    $('#states').append($newStateRow);
+});
+
+initializeCities();
+
+function initializeCities() {
+    let selectedState = $('#states option:selected').val();
+    let cities = stateCityList[selectedState];
+    cities.forEach(city => {
+        let $newCityRow = $(`
+        <option value="${city}">${city}</option>
+    `)
+    $('#city').append($newCityRow);
+    })
+    
+}
