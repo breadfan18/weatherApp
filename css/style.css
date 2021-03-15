@@ -99,6 +99,7 @@ header {
 .innerCard {
     padding: 20px;
 }
+
 #temp {
     /* grid-area: "temp"; */
     grid-column: 1;
