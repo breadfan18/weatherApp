@@ -17,4 +17,4 @@
 - CSS transitions used to change the background image of the displayBody to change based on weather conditions. Eg, Clouds, Rain, Snow, Clear, Mist
 
 ## Wireframe
-![Weather lab image](https://i.imgur.com/WcbcBlz.jpg)
+![Weather lab image](https://i.imgur.com/bYbMJiK.jpg)
