@@ -8,9 +8,6 @@ $displayBody = $('.displayBody');
 $displayCard = $('.displayCard');
 let userInput;
 
-//images 
-let sunny = '';
-
 function getWeatherData() {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=8e0c596f2a6fd2d958d7bb12765da115&units=imperial`
@@ -77,6 +74,8 @@ $inputField.on('keypress', function (e) {
         $inputField.val('');
     }
 })
+
+$('.dropdown-trigger').dropdown();
 
 
 /* 
