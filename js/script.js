@@ -27,7 +27,7 @@ function getWeatherData() {
 function render(weatherData) {
     $temp.text(`${Math.floor(weatherData.main.temp)}°F`);
     $city.text(weatherData.name);
-    $feelsLike.text('Feels Like: ' + weatherData.main.feels_like);
+    $feelsLike.text('Feels Like: ' + Math.floor(weatherData.main.feels_like) + '°F');
     $weather.text('Weather: ' + weatherData.weather[0].main);
     $displayCard.addClass('cardSwipeIn');
     changeBodyImage(weatherData.weather[0].main)
@@ -54,10 +54,12 @@ function changeBodyImage(weather) {
         case 'Mist':
             $displayBody.css('backgroundImage', 'url(\'https://media.arubanetworks.com/blogs/GettyImages-1164051562-1024x683.jpg\')')          
             break;
-        case 'Cloudy':
-            $displayBody.css('backgroundImage', 'url(\'https://p0.piqsels.com/preview/147/363/745/clouds-cloudy-dark-dark-clouds.jpg\')')          
+        case 'Rain':
+            $displayBody.css('backgroundImage', 'url(\'https://i.redd.it/ohq043q9y7t11.png\')')          
             break;
-    
+        case 'Snow':
+            $displayBody.css('backgroundImage', 'url(\'https://i.imgur.com/6IKADES.jpg\')')          
+            break;
         default:
             break;
     }
