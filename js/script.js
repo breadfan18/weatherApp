@@ -25,11 +25,13 @@ function getWeatherData() {
 }
 
 function render(weatherData) {
+    $displayCard.addClass('cardSwipeIn');
     $temp.text(`${Math.floor(weatherData.main.temp)}°F`);
     $city.text(weatherData.name);
     $feelsLike.text('Feels Like: ' + Math.floor(weatherData.main.feels_like) + '°F');
-    $weather.text('Weather: ' + weatherData.weather[0].main);
-    $displayCard.addClass('cardSwipeIn');
+    $weather.text(weatherData.weather[0].main);
+    $('#max').text('High: '+ Math.floor(weatherData.main.temp_max) + '°F');
+    $('#min').text('Low: ' + Math.floor(weatherData.main.temp_min) + '°F');
     changeBodyImage(weatherData.weather[0].main)
 }
 
