@@ -67,11 +67,11 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 800px;
+    width: 850px;
     min-height: inherit;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 0 40px 40px 40px;
-    margin-left: -820px;
+    margin-left: -850px;
 }
 
 .footer {
@@ -123,11 +123,18 @@ header {
 
 .others {
     margin: 10px;
-    background-image: url('https://i.imgur.com/z2ietrz.png');
+    background-image: url('https://i.imgur.com/CPdDDDF.png');
     background-size: cover;
-    height: 15vh;
+    height: 20vh;
 }
 
 h3 {
     text-align: center;
+}
+
+
+@media (max-width: 850px){
+    #temp {
+        font-size: 90px;
+    }
 }
