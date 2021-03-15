@@ -137,4 +137,12 @@ h3 {
     #temp {
         font-size: 90px;
     }
+
+    .displayCard {
+        width: 600px;
+    }
+
+    .innerCard p {
+        font-size: 20px;
+    }
 }
