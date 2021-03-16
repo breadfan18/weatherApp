@@ -33,6 +33,25 @@ header {
     margin-bottom: 10px;
 }
 
+.headerInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.headerInput select {
+    padding: 15px;
+    margin-right: 15px;
+}
+
+.headerInput label {
+    font-weight: bold;
+}
+
+.headerInput label {
+    margin-right: 10px;
+}
+
 #headerIcon {
     height: 100px;
 }
@@ -148,5 +167,11 @@ h3 {
 
     .innerCard p {
         font-size: 20px;
+    }
+
+    .headerInput {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
     }
 }
