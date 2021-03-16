@@ -1193,19 +1193,9 @@ $inputField.on('keypress', function (e) {
     }
 })
 
-
-/* 
-To Do
-- find another api that has images for all these cities. 
-- Add a drop down that user can pick states from and modify the api call to include states
-*/
-
-
 function initializeCities() {
-    console.log(cities);
     selectedState = $('#states option:selected').val();
     cities = stateCityList[selectedState];
-    console.log(cities);
     $('#cities').empty();
     $('#cities').append('<option></option>');
     cities.forEach(city => {
@@ -1218,3 +1208,10 @@ function initializeCities() {
 
 $('#states').on('change', initializeCities);
 $('#cities').on('change', handleWeather);
+
+
+/* 
+To Do
+- find another api that has images for all these cities. 
+- Add a drop down that user can pick states and cities --> DONE
+*/
