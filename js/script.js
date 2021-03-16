@@ -7,6 +7,7 @@ $submit = $('.waves-effect');
 $displayBody = $('.displayBody');
 $displayCard = $('.displayCard');
 let userInput;
+let selectedState, cities;
 const stateCityList = {
     "New York": [
       "New York",
@@ -1136,11 +1137,12 @@ function render(weatherData) {
     changeBodyImage(weatherData.weather[0].main)
 }
 
-function handleWeather(e) {
-    e.preventDefault();
-    userInput = $inputField.val();
+function handleWeather() {
+    // e.preventDefault();
+    // userInput = $inputField.val();
+    userInput = $('#cities').val();
     getWeatherData();
-    $inputField.val('');
+    // $inputField.val('');
 }
 
 function changeBodyImage(weather) {
@@ -1197,13 +1199,20 @@ allStates.forEach(element => {
 initializeCities();
 
 function initializeCities() {
-    let selectedState = $('#states option:selected').val();
-    let cities = stateCityList[selectedState];
+    console.log(cities);
+    selectedState = $('#states option:selected').val();
+    cities = stateCityList[selectedState];
+    console.log(cities);
+    $('#cities').empty();
+    $('#cities').append('<option></option>');
     cities.forEach(city => {
         let $newCityRow = $(`
         <option value="${city}">${city}</option>
     `)
-    $('#city').append($newCityRow);
+    $('#cities').append($newCityRow);
     })
-    
 }
+
+
+$('#states').on('change', initializeCities);
+$('#cities').on('change', handleWeather);
