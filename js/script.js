@@ -1113,6 +1113,18 @@ const stateCityList = {
     ]
   };
 
+
+// Add all the states to the states drop down from the state/city object
+let allStates = Object.keys(stateCityList);
+$('#states').append('<option></option>');
+allStates.forEach(element => {
+    let $newStateRow = $(`
+        <option value="${element}">${element}</option>
+    `)
+    $('#states').append($newStateRow);
+});
+
+
 function getWeatherData() {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=8e0c596f2a6fd2d958d7bb12765da115&units=imperial`
@@ -1188,15 +1200,6 @@ To Do
 - Add a drop down that user can pick states from and modify the api call to include states
 */
 
-let allStates = Object.keys(stateCityList);
-allStates.forEach(element => {
-    let $newStateRow = $(`
-        <option value="${element}">${element}</option>
-    `)
-    $('#states').append($newStateRow);
-});
-
-initializeCities();
 
 function initializeCities() {
     console.log(cities);
@@ -1212,7 +1215,6 @@ function initializeCities() {
     $('#cities').append($newCityRow);
     })
 }
-
 
 $('#states').on('change', initializeCities);
 $('#cities').on('change', handleWeather);
