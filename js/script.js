@@ -1115,7 +1115,8 @@ const stateCityList = {
 
 
 // Add all the states to the states drop down from the state/city object
-let allStates = Object.keys(stateCityList);
+let allStates = Object.keys(stateCityList).sort();
+console.log(allStates);
 $('#states').append('<option></option>');
 allStates.forEach(element => {
     let $newStateRow = $(`
@@ -1184,18 +1185,10 @@ function changeBodyImage(weather) {
 }
 
 // Event listeners
-$submit.on('click', handleWeather);
-
-$inputField.on('keypress', function (e) {
-    if (e.keyCode === 13) {
-        $submit.click();
-        $inputField.val('');
-    }
-})
 
 function initializeCities() {
     selectedState = $('#states option:selected').val();
-    cities = stateCityList[selectedState];
+    cities = stateCityList[selectedState].sort();
     $('#cities').empty();
     $('#cities').append('<option></option>');
     cities.forEach(city => {
@@ -1208,6 +1201,15 @@ function initializeCities() {
 
 $('#states').on('change', initializeCities);
 $('#cities').on('change', handleWeather);
+
+// $submit.on('click', handleWeather);
+
+// $inputField.on('keypress', function (e) {
+//     if (e.keyCode === 13) {
+//         $submit.click();
+//         $inputField.val('');
+//     }
+// })
 
 
 /* 
