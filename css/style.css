@@ -141,6 +141,12 @@ header {
     transition: 1s ease;
 }
 
+.cardSwipeOut {
+    margin-left: -850px;
+    /* display: flex; */
+    transition: 1s ease;
+}
+
 .others {
     margin: 10px;
     background-image: url('https://i.imgur.com/CPdDDDF.png');
